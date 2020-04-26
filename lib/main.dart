@@ -37,24 +37,42 @@ class _DicePageState extends State<DicePage> {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Row(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Expanded(
-            child: FlatButton(
-              onPressed: () {
-                changeDice();
-              },
-              child: Image.asset('images/dice$leftValue.png'),
-            ),
+          Row(
+            children: <Widget>[
+              Expanded(
+                child: FlatButton(
+                  onPressed: null,
+                  child: Image.asset('images/dice$leftValue.png'),
+                ),
+              ),
+              Expanded(
+                child: FlatButton(
+                  onPressed: null,
+                  child: Image.asset('images/dice$rightValue.png'),
+                ),
+              ),
+            ],
           ),
-          Expanded(
-            child: FlatButton(
-              onPressed: () {
-                changeDice();
-              },
-              child: Image.asset('images/dice$rightValue.png'),
-            ),
+          SizedBox(
+            height: 50.0,
           ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              IconButton(
+                icon: Icon(Icons.play_circle_outline),
+                tooltip: 'Click to Roll the Dice',
+                iconSize: 48.0,
+                color: Colors.white,
+                onPressed: () {
+                  changeDice();
+                },
+              ),
+            ],
+          )
         ],
       ),
     );
