@@ -1,4 +1,4 @@
-# flutter_dice
+# Dice App
 Dice App using Flutter
 
 ![Dice App](Dice.jpg)
